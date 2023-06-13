@@ -32,7 +32,7 @@ interface Props {
 
 function Navbar({ settings, onClick }: Props): JSX.Element {
   const { t } = useTranslation()
-  const { accessToken, logoUrl, companyName } = settings
+  const { accessToken, logoUrl, companyName, continueShoppingUrl } = settings
 
   const menu = {
     orders: {
@@ -42,6 +42,7 @@ function Navbar({ settings, onClick }: Props): JSX.Element {
       icon: <ShoppingCart className="w-4" />,
       comingSoon: false,
       accessToken,
+      continueShoppingUrl,
       onClick,
     },
     addresses: {
@@ -50,6 +51,7 @@ function Navbar({ settings, onClick }: Props): JSX.Element {
       icon: <MapPin className="w-4" />,
       comingSoon: false,
       accessToken,
+      continueShoppingUrl,
       onClick,
     },
     wallet: {
@@ -58,6 +60,7 @@ function Navbar({ settings, onClick }: Props): JSX.Element {
       icon: <CreditCard className="w-4" />,
       comingSoon: false,
       accessToken,
+      continueShoppingUrl,
       onClick,
     },
     returns: {
@@ -66,6 +69,7 @@ function Navbar({ settings, onClick }: Props): JSX.Element {
       icon: <Package className="w-4" />,
       comingSoon: true,
       accessToken,
+      continueShoppingUrl,
       onClick,
     },
     customerService: {
@@ -73,7 +77,11 @@ function Navbar({ settings, onClick }: Props): JSX.Element {
       href: "/customer_service",
       icon: <Lifebuoy className="w-4" />,
       accessToken,
+      continueShoppingUrl,
       onClick,
+    },
+    continue: {
+      href: continueShoppingUrl,
     },
   }
 
@@ -103,6 +111,9 @@ function Navbar({ settings, onClick }: Props): JSX.Element {
               <CustomerField name="email" attribute="email" tagElement="p" />
             </Email>
           </EmailWrapper>
+          <a href={menu.continue.href ?? ""} rel="noreferrer">
+            {t("general.continue_shopping")}
+          </a>
           <FooterWrapper>
             <Footer />
           </FooterWrapper>
