@@ -111,7 +111,11 @@ function Navbar({ settings, onClick }: Props): JSX.Element {
               <CustomerField name="email" attribute="email" tagElement="p" />
             </Email>
           </EmailWrapper>
-          <a href={menu.continue.href ?? ""} rel="noreferrer">
+          <a
+            data-testid="continue-shopping"
+            href={menu.continue.href ?? ""}
+            rel="noreferrer"
+          >
             {t("general.continue_shopping")}
           </a>
           <FooterWrapper>
