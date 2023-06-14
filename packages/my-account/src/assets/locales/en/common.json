@@ -6,7 +6,8 @@
     "invalid": "This URL is not accessible.",
     "privacy_link": "Privacy",
     "terms_link": "Terms",
-    "continue_shopping": "<< Continue Shopping"
+    "continue_shopping": "<< Continue Shopping",
+    "sign_out": "<< Sign Out"
   },
   "input": {
     "cantBlank" : "Can't be blank",
