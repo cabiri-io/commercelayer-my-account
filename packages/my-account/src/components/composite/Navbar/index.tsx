@@ -111,13 +111,26 @@ function Navbar({ settings, onClick }: Props): JSX.Element {
               <CustomerField name="email" attribute="email" tagElement="p" />
             </Email>
           </EmailWrapper>
-          <a
-            data-testid="continue-shopping"
-            href={menu.continue.href ?? ""}
-            rel="noreferrer"
-          >
-            {t("general.continue_shopping")}
-          </a>
+          <ul>
+            <li>
+              <a
+                data-testid="continue-shopping"
+                href={menu.continue.href ?? ""}
+                rel="noreferrer"
+              >
+                {t("general.continue_shopping")}
+              </a>
+            </li>
+            <li>
+              <a
+                data-testid="sign-out"
+                href={menu.continue.href ? `${menu.continue.href}/api/auth/signout` : ""}
+                rel="noreferrer"
+              >
+                {t("general.sign_out")}
+              </a>
+            </li>
+          </ul>
           <FooterWrapper>
             <Footer />
           </FooterWrapper>
